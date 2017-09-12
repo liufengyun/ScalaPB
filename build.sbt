@@ -89,6 +89,7 @@ lazy val runtime = crossProject.crossType(CrossType.Full).in(file("scalapb-runti
     unmanagedResourceDirectories in Compile += baseDirectory.value / "../../third_party"
   )
   .settings(dottySettings)
+  .enablePlugins(PackPlugin)
 
 lazy val runtimeJVM = runtime.jvm
 lazy val runtimeJS = runtime.js
